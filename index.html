@@ -40,16 +40,22 @@
       <h1>Cadastro</h1>
       <h2>Identificação da pessoa</h2>
       <form id="registrationForm">
+        <div>
           <label for="name">Nome</label>
           <input type="text" id="name" name="name" placeholder="Digite o nome" required>
+          <span class="required">Preenchimento obrigatório</span>
+        </div>
 
+        <div>
           <label for="social_name">Nome Social</label>
           <input type="text" id="social-name" name="social-name" placeholder="Digite o nome social" required>
+        </div>
 
           <div class="row">
             <div>
                 <label for="dob">Data de Nascimento</label>
                 <input type="text" id="dob" name="dob" placeholder="dd/mm/aaaa" required>
+                <span class="required">Preenchimento obrigatório</span>
             </div>
             <div>
                 <label for="sex">Sexo Biológico</label>
@@ -58,6 +64,7 @@
                     <option value="feminino">Feminino</option>
                     <option value="masculino">Masculino</option>
                 </select>
+                <span class="required">Preenchimento obrigatório</span>
             </div>
         </div>
 
@@ -107,6 +114,7 @@
           </div>
         </div>  
 
+        <div>
         <label for="race">Cor/Raça</label>
         <select id="race" name="race" required>
             <option value="">Selecione</option>
@@ -116,16 +124,20 @@
             <option value="amarelo">Amarelo</option>
             <option value="indígena">Indígena</option>
         </select>
+        <span class="required">Preenchimento obrigatório</span>
+      </div>
 
         <h2>Documentos</h2>
         <div class="row">
           <div>
             <label for="rg">RG</label>
             <input type="text" id="rg" name="rg" placeholder="00000000000" required>
+            <span class="required">Preenchimento obrigatório</span>
           </div>
           <div>
             <label for="cpf">CPF</label>
             <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+            <span class="required">Preenchimento obrigatório</span>
           </div>
         </div>
 
@@ -135,6 +147,7 @@
             <div>
                 <label para="district">Bairro</label>
                 <input type="text" id="district" name="district" placeholder="Digite o bairro" required>
+                <span class="required">Preenchimento obrigatório</span>
             </div>
             <div>
                 <label para="number">Número</label>
@@ -146,6 +159,7 @@
             <div>
                 <label para="address">Endereço</label>
                 <input type="text" id="address" name="address" placeholder="Selecione o endereço" required>
+                <span class="required">Preenchimento obrigatório</span>
             </div>
             <div>
                 <label para="complement">Complemento</label>
