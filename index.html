@@ -34,5 +34,95 @@
         </ul>
       </div>
     </div>
+
+
+    <div class="content">
+      <h1>Cadastro</h1>
+      <h2>Identificação da pessoa</h2>
+      <form id="registrationForm">
+          <label for="name">Nome</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="social_name">Nome Social</label>
+          <input type="text" id="social-name" name="social-name" required>
+
+          <div class="row">
+            <div>
+                <label for="dob">Data de Nascimento</label>
+                <input type="text" id="dob" name="dob" placeholder="DD/MM/AAAA" required>
+            </div>
+            <div>
+                <label for="sex">Sexo Biológico</label>
+                <select id="sex" name="sex" required>
+                    <option value="">Selecione</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="gender">
+            <label>Gênero</label>
+            <div class="gender-options">
+              <label>
+                  <input type="radio" name="gender" value="mulher-cisgenero" required>
+                  Mulher Cisgênero
+              </label>
+              <label>
+                  <input type="radio" name="gender" value="mulher-transgenero">
+                  Mulher Transgênero
+              </label>
+              <label>
+                  <input type="radio" name="gender" value="travesti">
+                  Travesti
+              </label>
+              <label>
+                  <input type="radio" name="gender" value="homem-cisgenero">
+                  Homem Cisgênero
+              </label>
+              <label>
+                  <input type="radio" name="gender" value="homem-transgenero">
+                  Homem Transgênero
+              </label>
+              <label>
+                  <input type="radio" name="gender" value="nao-binario">
+                  Não Binário
+              </label>
+            </div>
+          </div>
+
+          <div class="lgbt">
+            <label>Você se considera parte do público LGBTQIA+?</label>
+            <div class="lgbt-options">
+                <label>
+                    <input type="radio" name="lgbtqia" value="sim" required>
+                    Sim
+                </label>
+                <label>
+                    <input type="radio" name="lgbtqia" value="não">
+                    Não
+                </label>
+            </div>
+          </div>
+        </div>  
+
+        <label for="race">Cor/Raça</label>
+        <select id="race" name="race" required>
+            <option value="">Selecione uma opção</option>
+            <option value="branco">Branco</option>
+            <option value="negro">Negro</option>
+            <option value="pardo">Pardo</option>
+            <option value="amarelo">Amarelo</option>
+            <option value="indígena">Indígena</option>
+        </select>
+
+        <h2>Documentos</h2>
+        <h2>Local de residência</h2>
+        <h2>Informações de contato</h2>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
   </body>
 </html>

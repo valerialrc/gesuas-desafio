@@ -9,6 +9,9 @@ COPY index.html .
 COPY styles.css .
 COPY script.js .
 
+# Instalar o nodemon globalmente
+RUN npm install -g nodemon
+
 # Porta 80 do container exposta
 EXPOSE 80
 
