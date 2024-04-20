@@ -29,7 +29,7 @@ docker build -t gesuas-desafio .
 4. Execute o contêiner Docker:
 
 ```
-docker run -p 8080:80 gesuas-desafio
+docker run -v $(pwd):/usr/src/app -p 8080:80 gesuas-desafio      
 ```
 
 5. Abra o navegador da web e acesse `http://localhost:8080`.
