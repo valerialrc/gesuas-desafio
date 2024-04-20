@@ -1,0 +1,61 @@
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.sidebar {
+  width: 20%;
+  height: 100%;
+  background-color: #ffffff;
+  color: #4b4b4b;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  display: flex; /* Ativa o layout flexível para o 'ul' */
+  flex-direction: column; /* Organiza itens verticalmente */
+  align-items: flex-start;
+}
+
+.sidebar li {
+  padding: 16px;
+}
+
+.sidebar a {
+  color: #4b4b4b;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.sidebar .app-title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #f26363;
+  padding: 5px;
+}
+
+.sidebar .app-title .text-style-1 {
+  font-weight: normal;
+  color: #4b4b4b;
+}
+
+.sidebar .row {
+  display: flex;
+  align-items: center;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.sidebar img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  padding: 8px;
+}
+
+.section {
+  border: 1px solid #d8d8d8;
+}
