@@ -102,6 +102,7 @@ select {
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  border-color: #171559;
 }
 
 .row {
@@ -131,14 +132,33 @@ input[type="radio"] {
 }
 
 button {
-  background-color: #f26363;
   color: white;
   padding: 10px 20px;
-  border: none;
+  width: 222px;
+  height: 44px;
+  font-size: 20px;
   border-radius: 4px;
   cursor: pointer;
 }
 
+button.cancel {
+  color: #171559;
+  background-color: #FEFEFE;
+  border-color: #171559;
+}
+
+button.submit {
+  color: #FEFEFE;
+  background-color: #171559;
+  border-color: #FEFEFE;
+}
+
 button:hover {
-  background-color: #f26363;
+  opacity: 0.8;
+}
+
+.button-row {
+  display: flex; /* Flex para alinhar os botões */
+  justify-content: flex-end; /* Alinhar ao final (direita) */
+  gap: 10px; /* Espaço entre os botões */
 }
