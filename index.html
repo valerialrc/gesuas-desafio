@@ -39,11 +39,10 @@
       </div>
     </div>
 
-
     <div class="content">
       <h1>Cadastro</h1>
       <h2>Identificação da pessoa</h2>
-      <form id="registrationForm">
+      <form id="registrationForm" onsubmit="submitForm(event)" novalidate>
         <div>
           <label for="name">Nome</label>
           <input type="text" id="name" name="name" placeholder="Digite o nome" required>
@@ -55,21 +54,21 @@
           <input type="text" id="social-name" name="social-name" placeholder="Digite o nome social">
         </div>
 
-          <div class="row">
-            <div>
-                <label for="dob">Data de Nascimento</label>
-                <input type="text" id="dob" name="dob" placeholder="dd/mm/aaaa" required>
-                <span class="required">Preenchimento obrigatório</span>
-            </div>
-            <div>
-                <label for="sex">Sexo Biológico</label>
-                <select id="sex" name="sex" required>
-                    <option value="">Selecione</option>
-                    <option value="feminino">Feminino</option>
-                    <option value="masculino">Masculino</option>
-                </select>
-                <span class="required">Preenchimento obrigatório</span>
-            </div>
+        <div class="row">
+          <div>
+            <label for="dob">Data de Nascimento</label>
+            <input type="text" id="dob" name="dob" placeholder="dd/mm/aaaa" required>
+            <span class="required">Preenchimento obrigatório</span>
+          </div>
+          <div>
+            <label for="sex">Sexo Biológico</label>
+            <select id="sex" name="sex" required>
+              <option value="">Selecione</option>
+              <option value="feminino">Feminino</option>
+              <option value="masculino">Masculino</option>
+            </select>
+            <span class="required">Preenchimento obrigatório</span>
+          </div>
         </div>
 
         <div class="row">
@@ -77,28 +76,28 @@
             <label>Gênero</label>
             <div class="gender-options">
               <label>
-                  <input type="radio" name="gender" value="mulher-cisgenero">
-                  Mulher Cisgênero
+                <input type="radio" name="gender" value="mulher-cisgenero">
+                Mulher Cisgênero
               </label>
               <label>
-                  <input type="radio" name="gender" value="mulher-transgenero">
-                  Mulher Transgênero
+                <input type="radio" name="gender" value="mulher-transgenero">
+                Mulher Transgênero
               </label>
               <label>
-                  <input type="radio" name="gender" value="travesti">
-                  Travesti
+                <input type="radio" name="gender" value="travesti">
+                Travesti
               </label>
               <label>
-                  <input type="radio" name="gender" value="homem-cisgenero">
-                  Homem Cisgênero
+                <input type="radio" name="gender" value="homem-cisgenero">
+                Homem Cisgênero
               </label>
               <label>
-                  <input type="radio" name="gender" value="homem-transgenero">
-                  Homem Transgênero
+                <input type="radio" name="gender" value="homem-transgenero">
+                Homem Transgênero
               </label>
               <label>
-                  <input type="radio" name="gender" value="nao-binario">
-                  Não Binário
+                <input type="radio" name="gender" value="nao-binario">
+                Não Binário
               </label>
             </div>
           </div>
@@ -106,21 +105,21 @@
           <div class="lgbt">
             <label>A pessoa se considera parte do público LGBTQIA+?</label>
             <div class="lgbt-options">
-                <label>
-                    <input type="radio" name="lgbtqia" value="sim">
-                    Sim
-                </label>
-                <label>
-                    <input type="radio" name="lgbtqia" value="não">
-                    Não
-                </label>
+              <label>
+                <input type="radio" name="lgbtqia" value="sim">
+                Sim
+              </label>
+              <label>
+                <input type="radio" name="lgbtqia" value="não">
+                Não
+              </label>
             </div>
           </div>
         </div>  
 
         <div>
-        <label for="race">Cor/Raça</label>
-        <select id="race" name="race" required>
+          <label for="race">Cor/Raça</label>
+          <select id="race" name="race" required>
             <option value="">Selecione</option>
             <option value="branco">Branco</option>
             <option value="preto">Preto</option>
@@ -128,9 +127,9 @@
             <option value="amarelo">Amarelo</option>
             <option value="indígena">Indígena</option>
             <option value="não declarado">Não declarado</option>
-        </select>
-        <span class="required">Preenchimento obrigatório</span>
-      </div>
+          </select>
+          <span class="required">Preenchimento obrigatório</span>
+        </div>
 
         <h2>Documentos</h2>
         <div class="row">
@@ -150,25 +149,25 @@
         <div class="row">
           <div>
             <div>
-                <label para="district">Bairro</label>
-                <input type="text" id="district" name="district" placeholder="Digite o bairro" required>
-                <span class="required">Preenchimento obrigatório</span>
+              <label para="district">Bairro</label>
+              <input type="text" id="district" name="district" placeholder="Digite o bairro" required>
+              <span class="required">Preenchimento obrigatório</span>
             </div>
             <div>
-                <label para="number">Número</label>
-                <input type="text" id="number" name="number" placeholder="Digite o número">
+              <label para="number">Número</label>
+              <input type="text" id="number" name="number" placeholder="Digite o número">
             </div>
           </div>
 
           <div>
             <div>
-                <label para="address">Endereço</label>
-                <input type="text" id="address" name="address" placeholder="Selecione o endereço" required>
-                <span class="required">Preenchimento obrigatório</span>
+              <label para="address">Endereço</label>
+              <input type="text" id="address" name="address" placeholder="Selecione o endereço" required>
+              <span class="required">Preenchimento obrigatório</span>
             </div>
             <div>
-                <label para="complement">Complemento</label>
-                <input type="text" id="complement" name="complement" placeholder="Ex: apartamento 22">
+              <label para="complement">Complemento</label>
+              <input type="text" id="complement" name="complement" placeholder="Ex: apartamento 22">
             </div>
           </div>
         </div>
@@ -181,8 +180,8 @@
           </div>
 
           <div>
-              <label para="email">E-mail</label>
-              <input type="email" id="email" name="email" placeholder="Digite o e-mail">
+            <label para="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite o e-mail">
           </div>
 
         </div>
@@ -193,5 +192,15 @@
         </div>
       </form>
     </div>
+
+    <div id="success-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <i class="fa fa-check-circle"></i>
+        <p>Cadastro realizado com sucesso!</p>
+        <button id="new-registration-btn">Fazer novo cadastro</button>
+      </div>
+    </div>
+    
   </body>
 </html>

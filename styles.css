@@ -66,6 +66,19 @@ body {
   padding: 8px;
 }
 
+.sidebar li:hover {
+  background-color: #cccccc;
+}
+
+.sidebar .active {
+  background-color: #f26363;
+  font-weight: bold;
+}
+
+.sidebar .active a {
+  color: #ffffff;
+}
+
 .section {
   border: 1px solid #d8d8d8;
   padding-top: 10px;
@@ -117,7 +130,7 @@ select {
   border-color: #171559;
 }
 
-.row {
+.content .row {
   display: flex;
   justify-content: space-between;
   gap: 50px;
@@ -151,26 +164,13 @@ input[type="radio"] {
   margin-bottom: 10px;
 }
 
-.sidebar li:hover {
-  background-color: #cccccc;
-}
-
-.sidebar .active {
-  background-color: #f26363;
-  font-weight: bold;
-}
-
-.sidebar .active a {
-  color: #ffffff;
-}
-
 button {
   color: white;
   padding: 10px 20px;
   width: 222px;
   height: 44px;
   font-size: 20px;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
@@ -194,4 +194,40 @@ button:hover {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+  padding-top: 20px;
+}
+
+.error-text, .invalid {
+  color: #f26363;
+  font-weight: bold;
+}
+
+.modal {
+  display: none; /* O modal começa oculto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Deve estar na frente */
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px; /* Largura máxima do modal */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
 }
