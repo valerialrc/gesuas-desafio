@@ -143,3 +143,29 @@ function isValidDate(date) {
   return true;
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  const newRegistrationBtn = document.getElementById('new-registration-btn');
+
+  newRegistrationBtn.addEventListener('click', function () {
+    resetForm();
+  });
+});
+
+function resetForm() {
+  const form = document.getElementById('registrationForm');
+
+  // Limpa todos os campos do formulário
+  form.reset();
+
+  // Remove as classes de erro/aviso
+  const fieldsWithErrors = form.querySelectorAll('.invalid, .error-text');
+  fieldsWithErrors.forEach(field => {
+    field.classList.remove('invalid', 'error-text');
+  });
+
+  // Fecha o modal, se estiver aberto
+  const successModal = document.getElementById('success-modal');
+  if (successModal.style.display === 'flex') {
+    successModal.style.display = 'none';
+  }
+}
