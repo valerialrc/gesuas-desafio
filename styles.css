@@ -29,7 +29,14 @@ body {
 .sidebar a {
   color: #4b4b4b;
   text-decoration: none;
-  padding: 10px;
+  padding: 20px;
+}
+
+.sidebar p {
+  color: #4b4b4b;
+  padding-left: 10px;
+  margin: 0;
+  font-size: 12px;
 }
 
 .sidebar .app-title {
@@ -61,10 +68,13 @@ body {
 
 .section {
   border: 1px solid #d8d8d8;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .content {
   margin-left: 20%;
+  margin-right: 20px;
   padding: 20px;
 }
 
@@ -110,7 +120,7 @@ select {
 .row {
   display: flex;
   justify-content: space-between;
-  gap: 15px;
+  gap: 50px;
 }
 
 .row div {
