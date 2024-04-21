@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const currentPage = window.location.pathname.split('/').pop();
   const links = document.querySelectorAll('.sidebar a');
 
+  // Verifica a página atual e evidencia no menu
   links.forEach(link => {
     if (link.getAttribute('href') === currentPage) {
       link.parentElement.classList.add('active');
@@ -38,36 +39,44 @@ document.addEventListener('DOMContentLoaded', function () {
     requiredFields.forEach((field) => {
       const warningText = field.parentElement.querySelector('.required');
       if (!field.value.trim()) {
-          isValid = false;
-          warningText.classList.add('error-text'); // Adiciona a classe para tornar o texto vermelho
+        isValid = false;
+        warningText.classList.add('error-text'); // Adiciona a classe para tornar o texto vermelho
       } else {
-          warningText.classList.remove('error-text'); // Remove a classe para corrigir a cor
+        warningText.classList.remove('error-text'); // Remove a classe para corrigir a cor
       }
     });
 
-     // Validação do CPF
-     const cpfField = form.querySelector('#cpf');
-     const cpfValue = cpfField.value.trim();
-     if (cpfField && !isValidCPF(cpfValue)) {
-         isValid = false;
-         cpfField.classList.add('invalid');
-     } else {
-         cpfField.classList.remove('invalid');
-     }
+    // Validação do CPF
+    const cpfField = form.querySelector('#cpf');
+    const cpfValue = cpfField.value.trim();
+    if (cpfField && !isValidCPF(cpfValue)) {
+      isValid = false;
+      cpfField.classList.add('invalid');
+    } else {
+      cpfField.classList.remove('invalid');
+    }
  
-     // Validação da Data de Nascimento
-     const dobField = form.querySelector('#dob');
-     const dobValue = dobField.value.trim();
-     if (dobField && !isValidDate(dobValue)) {
-         isValid = false;
-         dobField.classList.add('invalid');
-     } else {
-         dobField.classList.remove('invalid');
-     }
+    // Validação da Data de Nascimento
+    const dobField = form.querySelector('#dob');
+    const dobValue = dobField.value.trim();
+    if (dobField && !isValidDate(dobValue)) {
+      isValid = false;
+      dobField.classList.add('invalid');
+    } else {
+      dobField.classList.remove('invalid');
+    }
 
     if (isValid) {
       showModal();
     }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const newRegistrationBtn = document.getElementById('new-registration-btn');
+
+  newRegistrationBtn.addEventListener('click', function () {
+    resetForm();
   });
 });
 
@@ -142,14 +151,6 @@ function isValidDate(date) {
 
   return true;
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  const newRegistrationBtn = document.getElementById('new-registration-btn');
-
-  newRegistrationBtn.addEventListener('click', function () {
-    resetForm();
-  });
-});
 
 function resetForm() {
   const form = document.getElementById('registrationForm');
