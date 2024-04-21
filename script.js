@@ -45,28 +45,28 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // Verificar formato do CPF
-    const cpfField = form.querySelector('#cpf');
-    const cpfPattern = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
-    if (cpfField && !cpfPattern.test(cpfField.value.trim())) {
-        isValid = false;
-        cpfField.classList.add('invalid');
-    } else {
-        cpfField.classList.remove('invalid');
-    }
-
-    // Verificar formato da data de nascimento
-    const dobField = form.querySelector('#dob');
-    const dobPattern = /^\d{2}\/\d{2}\/\d{4}$/;
-    if (dobField && !dobPattern.test(dobField.value.trim())) {
-        isValid = false;
-        dobField.classList.add('invalid');
-    } else {
-        dobField.classList.remove('invalid');
-    }
+     // Validação do CPF
+     const cpfField = form.querySelector('#cpf');
+     const cpfValue = cpfField.value.trim();
+     if (cpfField && !isValidCPF(cpfValue)) {
+         isValid = false;
+         cpfField.classList.add('invalid');
+     } else {
+         cpfField.classList.remove('invalid');
+     }
+ 
+     // Validação da Data de Nascimento
+     const dobField = form.querySelector('#dob');
+     const dobValue = dobField.value.trim();
+     if (dobField && !isValidDate(dobValue)) {
+         isValid = false;
+         dobField.classList.add('invalid');
+     } else {
+         dobField.classList.remove('invalid');
+     }
 
     if (isValid) {
-      form.submit();
+      showModal();
     }
   });
 });
@@ -88,12 +88,58 @@ window.onclick = function(event) {
   }
 };
 
-function submitForm(event) {
-  event.preventDefault();
+function isValidCPF(cpf) {
+  // Remover caracteres não numéricos
+  cpf = cpf.replace(/[^\d]+/g, '');
 
-  const cadastroBemSucedido = true;
-
-  if (cadastroBemSucedido) {
-    showModal();
+  // Verificar se o CPF tem 11 dígitos
+  if (cpf.length !== 11) {
+    return false;
   }
+
+  // Checar se todos os dígitos são iguais (casos como "111.111.111-11")
+  if (/^(.)\1*$/.test(cpf)) {
+    return false;
+  }
+
+  // Cálculo para verificar os dígitos verificadores
+  function calculateDigit(cpf, factor) {
+    let sum = 0;
+    for (let i = 0; i < factor - 1; i++) {
+      sum += parseInt(cpf.charAt(i)) * (factor - i);
+    }
+    let result = 11 - (sum % 11);
+    return result > 9 ? 0 : result;
+  }
+
+  const firstDigit = calculateDigit(cpf, 10);
+  const secondDigit = calculateDigit(cpf, 11);
+
+  return (
+    firstDigit === parseInt(cpf.charAt(9)) &&
+    secondDigit === parseInt(cpf.charAt(10))
+  );
 }
+
+function isValidDate(date) {
+  const [day, month, year] = date.split('/').map(Number);
+
+  // Verifica se é uma data válida
+  const dateObject = new Date(year, month - 1, day);
+  if (
+    dateObject.getFullYear() !== year ||
+    dateObject.getMonth() + 1 !== month ||
+    dateObject.getDate() !== day
+  ) {
+    return false;
+  }
+
+  // Verifica se a data não está no futuro
+  const today = new Date();
+  if (dateObject > today) {
+    return false;
+  }
+
+  return true;
+}
+
