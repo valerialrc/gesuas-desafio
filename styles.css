@@ -14,13 +14,16 @@ body {
 
 .sidebar ul {
   list-style-type: none;
-  display: flex;
+  display: block;
   flex-direction: column;
   align-items: flex-start;
+  margin: 0;
+  padding: 0;
 }
 
 .sidebar li {
   padding: 16px;
+  margin: 0;
 }
 
 .sidebar a {
@@ -136,6 +139,19 @@ input[type="radio"] {
   font-weight: 500;
   margin-top: 5px;
   margin-bottom: 10px;
+}
+
+.sidebar li:hover {
+  background-color: #cccccc;
+}
+
+.sidebar .active {
+  background-color: #f26363;
+  font-weight: bold;
+}
+
+.sidebar .active a {
+  color: #ffffff;
 }
 
 button {
